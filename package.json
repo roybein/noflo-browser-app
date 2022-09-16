@@ -1,0 +1,54 @@
+{
+  "name": "noflo-browser-app",
+  "description": "The best project ever.",
+  "version": "0.4.0",
+  "author": {
+    "name": "Jon Nordby",
+    "email": "jononor@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/noflo/noflo-browser-app.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "lint": "eslint *.js components/*.js",
+    "lint-fix": "eslint --fix *.js components/*.js",
+    "postinstall": "noflo-cache-preheat",
+    "pretest": "npm run lint && npm run build",
+    "start": "webpack-dev-server",
+    "test": "fbp-spec --address ws://localhost:3569 --trace --command \"noflo-runtime-headless -f dist/test.js\" spec/*.yaml"
+  },
+  "dependencies": {
+    "noflo": "^1.0.0",
+    "noflo-core": "^0.6.0",
+    "noflo-dom": "^0.3.0",
+    "noflo-interaction": "^0.3.0",
+    "noflo-runtime-postmessage": "^0.13.0",
+    "uuid-by-string": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-loader": "^8.0.4",
+    "coffee-loader": "^2.0.0",
+    "coffeescript": "^2.5.1",
+    "copy-webpack-plugin": "^8.0.0",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.14.0",
+    "fbp-spec": "^0.8.0",
+    "noflo-component-loader": "^0.4.0",
+    "noflo-runtime-headless": "^0.2.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "util": "^0.12.3",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "keywords": [
+    "noflo"
+  ]
+}
